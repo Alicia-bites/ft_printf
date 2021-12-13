@@ -1,52 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tools.c                                         :+:      :+:    :+:   */
+/*   ft_print_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarchan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 13:59:53 by amarchan          #+#    #+#             */
-/*   Updated: 2021/12/13 12:05:35 by amarchan         ###   ########.fr       */
+/*   Created: 2021/12/13 12:04:35 by amarchan          #+#    #+#             */
+/*   Updated: 2021/12/13 12:23:52 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar_n(char c)
+int	ft_int_min(int len)
 {
-	write(1, &c, 1);
-	return (1);
+	(void) len;
+	write(1, "-2147483648", 11);
+	return (11);
 }
 
-void	ft_putchar(char c)
+int	ft_print_d(int nb)
 {
-	write(1, &c, 1);
-}
+	int	len;
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-int	ft_putstr_n(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str == 0)
+	len = 0;
+	if (nb == -2147483648)
+		len = ft_int_min(len);
+	if (nb < 0)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		ft_putchar('-');
+		nb *= -1;
+		len++;
 	}
-	while (str[i])
+	if (nb > 9)
 	{
-		ft_putchar(str[i]);
-		i++;
+		len += ft_print_d(nb / 10);
+		len += ft_print_d(nb % 10);
 	}
-	return (i);
+	else
+	{
+		ft_putchar(nb + '0');
+		len++;
+	}
+	return (len);
 }

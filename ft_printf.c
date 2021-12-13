@@ -6,7 +6,7 @@
 /*   By: amarchan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 19:41:40 by amarchan          #+#    #+#             */
-/*   Updated: 2021/12/10 20:26:10 by amarchan         ###   ########.fr       */
+/*   Updated: 2021/12/13 12:01:41 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,42 +38,14 @@ int	ft_print_args(char c, va_list args)
 	return (ret);
 }
 
-/*int	ft_count_percent(const char *s)
-{
-		int	i;
-		int	len;
-		i = 0;
-		len = 0;
-
-		while (s && (i + 1) <= ft_strlen((char *)s))
-		{
-			if (s[i] == '%' && s[i + 1] && s[i + 1] != '%')
-				i++;
-			len = i;
-			i++;
-		}
-		return (len);
-}*/
-
 int	ft_printf(const char *echo, ...)
 {
 	va_list	args;
 	int		i;
 	int		len;
-	//int		percent_count;
 
 	va_start(args, echo);
 	len = 0;
-	i = 0;
-	
-	/*percent_count = ft_count_percent(echo);
-	while (percent_count--)
-	{
-			if (!echo[i])
-				ft_putstr_n("(nil)");
-			i++;
-			len++;
-	}*/
 	i = 0;
 	while (echo[i])
 	{

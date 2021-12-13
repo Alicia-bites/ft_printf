@@ -6,7 +6,7 @@
 #    By: amarchan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 11:57:51 by amarchan          #+#    #+#              #
-#    Updated: 2021/12/10 14:02:43 by amarchan         ###   ########.fr        #
+#    Updated: 2021/12/13 12:10:45 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ RM = rm -rf
 
 FILES = ft_printf \
         ft_tools \
-        ft_putnbr_base_n \
+		ft_print_d \
+		ft_print_u \
 		ft_px \
 
 SRCS_DIR = ./
