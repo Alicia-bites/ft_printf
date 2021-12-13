@@ -6,7 +6,7 @@
 /*   By: amarchan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 12:04:35 by amarchan          #+#    #+#             */
-/*   Updated: 2021/12/13 12:23:52 by amarchan         ###   ########.fr       */
+/*   Updated: 2021/12/13 12:37:56 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ int	ft_print_d(int nb)
 
 	len = 0;
 	if (nb == -2147483648)
+	{
 		len = ft_int_min(len);
+		return (11);
+	}
 	if (nb < 0)
 	{
 		ft_putchar('-');

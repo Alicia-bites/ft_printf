@@ -6,7 +6,7 @@
 /*   By: amarchan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:19:40 by amarchan          #+#    #+#             */
-/*   Updated: 2021/12/10 16:14:30 by amarchan         ###   ########.fr       */
+/*   Updated: 2021/12/13 12:49:50 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static int	ft_nbrlen(long unsigned int nbr)
 {
-		int	i;
+	int	i;
 
-		i = 0;
-		while (nbr > 0)
-		{
-			nbr /= 10;
-			i++;
-		}
-		return (i);
+	i = 0;
+	while (nbr > 0)
+	{
+		nbr /= 10;
+		i++;
+	}
+	return (i);
 }
 
 static int	ft_check_base(char *base)
@@ -56,7 +56,7 @@ static int	ft_print(long unsigned int *nbr_final, long unsigned int nbr,
 		int size_base, char *base)
 {
 	int	i;
-	int len;
+	int	len;
 	int	nbr_base;
 
 	i = 0;
@@ -87,13 +87,14 @@ int	ft_px(long unsigned int nbr, char *base)
 	size_base = 0;
 	nbr_size = ft_nbrlen(nbr);
 	if (nbr == 0)
-			return (ft_putstr_n("0"));
-	nbr_final = (long unsigned int *)malloc(sizeof(long unsigned int) * nbr_size);
+		return (ft_putstr_n("0"));
+	nbr_final = (long unsigned int *)malloc(sizeof(long unsigned int)
+			* nbr_size);
 	if (!nbr_final)
-			return (0);
+		return (0);
 	if (ft_check_base(base))
 		size_base = ft_strlen(base);
-	len = ft_print(nbr_final, nbr, size_base, base); 
+	len = ft_print(nbr_final, nbr, size_base, base);
 	free(nbr_final);
 	return (len);
 }
